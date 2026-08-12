@@ -502,11 +502,11 @@ async function sendEmails(data: {
           </div>
 
           <div style="text-align: center; margin: 30px 0 10px;">
-            <a href="https://AlMaghribacademy.co" class="btn">Visit Our Website</a>
+            <a href="https://almaghrib.academy" class="btn">Visit Our Website</a>
           </div>
 
           <p style="font-size: 14px; color: #888; text-align: center; margin-top: 20px;">
-            You can <a href="https://AlMaghribacademy.co/unsubscribe?email=${encodeURIComponent(email)}" class="unsubscribe-link">unsubscribe</a> at any time.
+            You can <a href="https://almaghrib.academy/unsubscribe?email=${encodeURIComponent(email)}" class="unsubscribe-link">unsubscribe</a> at any time.
           </p>
         </div>
         <div class="footer">
@@ -705,7 +705,7 @@ async function sendEmails(data: {
           <h2>Quick Actions</h2>
           <div class="actions">
             <a href="mailto:${email}" class="btn btn-email">📧 Email Subscriber</a>
-            <a href="https://AlMaghribacademy.co/admin/newsletter" class="btn btn-dashboard">📊 View All</a>
+            <a href="https://almaghrib.academy/admin/newsletter" class="btn btn-dashboard">📊 View All</a>
           </div>
         </div>
         <div class="footer">
@@ -757,7 +757,7 @@ async function sendEmails(data: {
         'X-Priority': '3',
         'X-MSMail-Priority': 'Normal',
         'Importance': 'Normal',
-        'List-Unsubscribe': `<https://AlMaghribacademy.co/unsubscribe?email=${encodeURIComponent(email)}>`,
+        'List-Unsubscribe': `<https://almaghrib.academy/unsubscribe?email=${encodeURIComponent(email)}>`,
       },
     });
     console.log('Subscriber email sent successfully to:', email);

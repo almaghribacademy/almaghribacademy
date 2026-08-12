@@ -472,14 +472,14 @@ async function sendEmails(data: {
           <div class="cta-section">
             <p>In the meantime, you can:</p>
             <ul style="padding-left: 20px;">
-              <li>📖 Explore our <a href="https://AlMaghribacademy.co/courses" style="color: #0a2e7a;">courses</a></li>
-              <li>📝 Book a <a href="https://AlMaghribacademy.co/trial-form" style="color: #0a2e7a;">free trial</a></li>
+              <li>📖 Explore our <a href="https://almaghrib.academy/courses" style="color: #0a2e7a;">courses</a></li>
+              <li>📝 Book a <a href="https://almaghrib.academy/trial-form" style="color: #0a2e7a;">free trial</a></li>
               <li>📞 Call us at <a href="tel:+447700181874" style="color: #0a2e7a;">+44 7700 181874</a></li>
             </ul>
           </div>
 
           <div style="text-align: center; margin: 30px 0 10px;">
-            <a href="https://AlMaghribacademy.co" class="btn">Visit Our Website</a>
+            <a href="https://almaghrib.academy" class="btn">Visit Our Website</a>
           </div>
         </div>
         <div class="footer">
@@ -680,7 +680,7 @@ async function sendEmails(data: {
           <div class="actions">
             <a href="mailto:${email}?subject=Re: ${encodeURIComponent(subject)}" class="btn btn-reply">📧 Reply</a>
             <a href="tel:${phone}" class="btn btn-call">📞 Call</a>
-            <a href="https://AlMaghribacademy.co/admin/contact/${contactId}" class="btn btn-dashboard">📊 Dashboard</a>
+            <a href="https://almaghrib.academy/admin/contact/${contactId}" class="btn btn-dashboard">📊 Dashboard</a>
           </div>
 
           <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin: 20px 0;">
@@ -780,7 +780,7 @@ export async function OPTIONS() {
     {},
     {
       headers: {
-        'Access-Control-Allow-Origin': 'https://AlMaghribacademy.co',
+        'Access-Control-Allow-Origin': 'https://almaghrib.academy',
         'Access-Control-Allow-Methods': 'POST, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type, Authorization',
         'Access-Control-Max-Age': '86400',

@@ -240,7 +240,7 @@ async function sendConfirmationEmail(data: any) {
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px;">
         <div style="text-align: center; margin-bottom: 20px;">
-          <img src="https://www.AlMaghribacademy.co/assets/images/only-logo.png" alt="AlMaghrib Academy" style="max-width: 80px;" />
+          <img src="https://www.almaghrib.academy/assets/images/only-logo.png" alt="AlMaghrib Academy" style="max-width: 80px;" />
         </div>
         <h2 style="color: #0a2e7a; text-align: center;">Registration Confirmation</h2>
         <p>Dear ${firstName} ${lastName},</p>
@@ -262,7 +262,7 @@ async function sendConfirmationEmail(data: any) {
         <p style="color: #64748b; font-size: 14px; margin-top: 20px;">Thank you for choosing AlMaghrib Academy!</p>
         <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
         <p style="color: #94a3b8; font-size: 12px; text-align: center;">
-          AlMaghrib Academy &bull; <a href="https://www.AlMaghribacademy.co" style="color: #0a2e7a; text-decoration: none;">www.AlMaghribacademy.co</a>
+          AlMaghrib Academy &bull; <a href="https://www.almaghrib.academy" style="color: #0a2e7a; text-decoration: none;">www.almaghrib.academy</a>
         </p>
       </div>
     `,
@@ -323,11 +323,11 @@ async function sendAdminNotification(data: any) {
         </div>
         
         <p style="color: #64748b; font-size: 14px; margin-top: 20px;">
-          View all registrations: <a href="https://www.AlMaghribacademy.co/admin/registrations" style="color: #0a2e7a;">Admin Dashboard</a>
+          View all registrations: <a href="https://www.almaghrib.academy/admin/registrations" style="color: #0a2e7a;">Admin Dashboard</a>
         </p>
         <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
         <p style="color: #94a3b8; font-size: 12px; text-align: center;">
-          AlMaghrib Academy &bull; <a href="https://www.AlMaghribacademy.co" style="color: #0a2e7a; text-decoration: none;">www.AlMaghribacademy.co</a>
+          AlMaghrib Academy &bull; <a href="https://www.almaghrib.academy" style="color: #0a2e7a; text-decoration: none;">www.almaghrib.academy</a>
         </p>
       </div>
     `,

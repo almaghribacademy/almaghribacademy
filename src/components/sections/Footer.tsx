@@ -112,7 +112,7 @@ export default function Footer() {
               <h3 className="footer-brand">
                 <Link href="/">
                   <Image
-                    src={"/assets/images/AlMaghrib-white-logo-1.png"}
+                    src={"/assets/images/AlMaghrib-white-logo.png"}
                     alt="AlMaghrib Academy"
                     width={300}
                     height={250}

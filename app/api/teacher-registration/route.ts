@@ -606,7 +606,7 @@ async function sendEmails(data: {
           </ol>
 
           <div style="text-align: center; margin: 30px 0 10px;">
-            <a href="https://AlMaghribacademy.co" class="btn">Visit Our Website</a>
+            <a href="https://almaghrib.academy" class="btn">Visit Our Website</a>
           </div>
         </div>
         <div class="footer">
@@ -770,7 +770,7 @@ export async function OPTIONS() {
     {},
     {
       headers: {
-        'Access-Control-Allow-Origin': 'https://AlMaghribacademy.co',
+        'Access-Control-Allow-Origin': 'https://almaghrib.academy',
         'Access-Control-Allow-Methods': 'POST, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type, Authorization',
         'Access-Control-Max-Age': '86400',

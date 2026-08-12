@@ -452,7 +452,7 @@ export default function TrialForm() {
           title: "Booking Submitted!",
           html: `
           <div style="text-align:center;">
-            <img src="https://www.AlMaghribacademy.co/assets/images/only-logo.png"
+            <img src="https://www.almaghrib.academy/assets/images/only-logo.png"
             alt="AlMaghrib Academy"
             style="max-width:60px;
             margin:0 auto 15px auto;
@@ -951,7 +951,7 @@ export default function TrialForm() {
           <div className="custom-loader">
 
             <img
-              src="https://www.AlMaghribacademy.co/assets/images/only-logo.png"
+              src="https://www.almaghrib.academy/assets/images/only-logo.png"
               alt="AlMaghrib Academy"
               className="loader-logo"
             />

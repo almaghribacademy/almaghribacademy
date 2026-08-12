@@ -390,7 +390,7 @@ async function sendEmails(data: any) {
       <body>
         <div class="container">
           <div class="logo-container">
-            <img src="https://AlMaghribacademy.co/assets/images/only-logo.png" alt="AlMaghrib Academy" class="logo" />
+            <img src="https://almaghrib.academy/assets/images/only-logo.png" alt="AlMaghrib Academy" class="logo" />
           </div>
 
           <div class="header">
@@ -444,7 +444,7 @@ async function sendEmails(data: any) {
             <hr class="divider" />
 
             <div style="text-align: center; margin-top: 25px;">
-              <a href="https://AlMaghribacademy.co" class="btn">Visit Our Website</a>
+              <a href="https://almaghrib.academy" class="btn">Visit Our Website</a>
             </div>
           </div>
           
@@ -602,7 +602,7 @@ async function sendEmails(data: any) {
       <body>
         <div class="container">
           <div class="logo-container">
-            <img src="https://AlMaghribacademy.co/assets/images/only-logo.png" alt="AlMaghrib Academy" class="logo" />
+            <img src="https://almaghrib.academy/assets/images/only-logo.png" alt="AlMaghrib Academy" class="logo" />
           </div>
 
           <div class="header">
