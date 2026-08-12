@@ -5,41 +5,45 @@ import nodemailer from 'nodemailer';
 import { z } from 'zod';
 
 // ============================================
-// 1. DATABASE CONNECTION (Singleton Pattern)
+// 1. DATABASE CONNECTION (Fixed for Serverless)
 // ============================================
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
 };
 
-export const prisma = globalForPrisma.prisma ?? new PrismaClient();
+export const prisma = globalForPrisma.prisma ?? new PrismaClient({
+  log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
+});
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 
 // ============================================
-// 2. ENVIRONMENT VARIABLES VALIDATION (FIXED)
+// 2. ENVIRONMENT VARIABLES VALIDATION (Enhanced)
 // ============================================
 const envSchema = z.object({
   SMTP_HOST: z.string().min(1).default('smtppro.zoho.com'),
   SMTP_PORT: z
-  .string()
-  .default("465")
-  .transform(Number)
-  .pipe(z.number().int().positive()),
+    .string()
+    .default("465")
+    .transform(Number)
+    .pipe(z.number().int().positive()),
   SMTP_USER: z.string().min(1),
   SMTP_PASS: z.string().min(1),
   SMTP_FROM: z.string().email().default('contact@almaghrib.academy'),
   ADMIN_EMAIL: z.string().email().default('contact@almaghrib.academy'),
   NODE_ENV: z.string().default('development'),
+  DATABASE_URL: z.string().min(1), // Ensure DB URL is set
 });
 
-// Parse with fallback for missing env vars
+// Parse with detailed error logging
 const result = envSchema.safeParse(process.env);
 
 if (!result.success) {
   console.error('❌ Invalid environment variables:', result.error.format());
-  // Use defaults for development, throw in production
+  
+  // In production, throw error
   if (process.env.NODE_ENV === 'production') {
-    throw new Error('Invalid environment variables');
+    throw new Error(`Invalid environment variables: ${JSON.stringify(result.error.format())}`);
   }
 }
 
@@ -52,7 +56,19 @@ const config = result.success ? result.data : {
   SMTP_FROM: 'contact@almaghrib.academy',
   ADMIN_EMAIL: 'contact@almaghrib.academy',
   NODE_ENV: 'development',
+  DATABASE_URL: process.env.DATABASE_URL || '',
 };
+
+// Log config (excluding sensitive data)
+// console.log('📧 Email Config:', {
+//   host: config.SMTP_HOST,
+//   port: config.SMTP_PORT,
+//   from: config.SMTP_FROM,
+//   admin: config.ADMIN_EMAIL,
+//   env: config.NODE_ENV,
+//   hasUser: !!config.SMTP_USER,
+//   hasPass: !!config.SMTP_PASS,
+// });
 
 // ============================================
 // 3. INPUT VALIDATION SCHEMA
@@ -66,7 +82,7 @@ const contactSchema = z.object({
 });
 
 // ============================================
-// 4. SIMPLE IN-MEMORY RATE LIMITING
+// 4. SIMPLE IN-MEMORY RATE LIMITING (Redis recommended for production)
 // ============================================
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 
@@ -107,33 +123,45 @@ function checkRateLimit(ip: string): { allowed: boolean; remaining: number; rese
 }
 
 // ============================================
-// 5. EMAIL TRANSPORTER CONFIGURATION
+// 5. EMAIL TRANSPORTER CONFIGURATION (Fixed)
 // ============================================
-const transporter = nodemailer.createTransport({
-  host: config.SMTP_HOST,
-  port: config.SMTP_PORT,
-  secure: true,
-  auth: {
-    user: config.SMTP_USER,
-    pass: config.SMTP_PASS,
-  },
-  tls: {
-    rejectUnauthorized: process.env.NODE_ENV === 'production',
-  },
-  pool: true,
-  maxConnections: 5,
-  rateDelta: 1000,
-  rateLimit: 5,
-});
+let transporter: nodemailer.Transporter | null = null;
 
-// Verify connection
-transporter.verify((error, success) => {
-  if (error) {
-    console.error('SMTP connection error:', error);
-  } else {
-    console.log('SMTP server is ready to send emails');
+function getTransporter() {
+  if (!transporter) {
+    transporter = nodemailer.createTransport({
+      host: config.SMTP_HOST,
+      port: config.SMTP_PORT,
+      secure: config.SMTP_PORT === 465, // Use secure for port 465
+      auth: {
+        user: config.SMTP_USER,
+        pass: config.SMTP_PASS,
+      },
+      tls: {
+        rejectUnauthorized: process.env.NODE_ENV === 'production',
+        // For Zoho, sometimes need these settings
+        ciphers: 'SSLv3',
+      },
+      pool: true,
+      maxConnections: 5,
+      rateDelta: 1000,
+      rateLimit: 5,
+      // Add connection timeout
+      socketTimeout: 30000,
+      connectionTimeout: 30000,
+    });
+
+    // Verify connection (don't block the request)
+    transporter.verify((error, success) => {
+      if (error) {
+        console.error('❌ SMTP connection error:', error);
+      } else {
+        console.log('✅ SMTP server is ready to send emails');
+      }
+    });
   }
-});
+  return transporter;
+}
 
 // ============================================
 // 6. MAIN POST HANDLER
@@ -205,10 +233,10 @@ export async function POST(request: NextRequest) {
     // Save to Database
     const contact = await prisma.contactMessage.create({
       data: {
-        fullName: fullName,  // ✅ CORRECT - matches your schema
+        fullName: fullName,
         email,
-        phone,               // ✅ Make sure you have this
-        subject,             // ✅ And this
+        phone,
+        subject,
         message,
         ipAddress,
         userAgent,
@@ -217,7 +245,8 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // Send Emails (Asynchronously)
+    // Send Emails (Asynchronously with better error handling)
+    // Don't await - let it run in background
     sendEmails({
       fullName: fullName.trim(),
       email: email.toLowerCase().trim(),
@@ -229,19 +258,19 @@ export async function POST(request: NextRequest) {
       userAgent,
       referer,
     }).catch(emailError => {
-      console.error('Background email sending failed:', {
+      console.error('❌ Background email sending failed:', {
         error: emailError instanceof Error ? emailError.message : 'Unknown error',
         contactId: contact.id,
         email,
       });
     });
 
-    console.log('Contact form submitted successfully:', {
-      contactId: contact.id,
-      email,
-      ip: ipAddress,
-      duration: `${Date.now() - startTime}ms`,
-    });
+    // console.log('✅ Contact form submitted successfully:', {
+    //   contactId: contact.id,
+    //   email,
+    //   ip: ipAddress,
+    //   duration: `${Date.now() - startTime}ms`,
+    // });
 
     return NextResponse.json({
       success: true,
@@ -253,7 +282,7 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Contact form error:', {
+    console.error('❌ Contact form error:', {
       error: error instanceof Error ? error.message : 'Unknown error',
       stack: error instanceof Error ? error.stack : undefined,
       duration: `${Date.now() - startTime}ms`,
@@ -286,7 +315,7 @@ export async function POST(request: NextRequest) {
 }
 
 // ============================================
-// 7. EMAIL SENDING FUNCTION
+// 7. EMAIL SENDING FUNCTION (Improved)
 // ============================================
 async function sendEmails(data: {
   fullName: string;
@@ -707,14 +736,19 @@ async function sendEmails(data: {
   // ============================================
   const sendWithRetry = async (options: nodemailer.SendMailOptions, maxRetries = 3) => {
     let lastError: Error | null = null;
+    const transporterInstance = getTransporter();
+
+    if (!transporterInstance) {
+      throw new Error('Transporter not initialized');
+    }
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
-        const info = await transporter.sendMail(options);
+        const info = await transporterInstance.sendMail(options);
         return info;
       } catch (error) {
         lastError = error as Error;
-        console.warn(`Email attempt ${attempt} failed:`, {
+        console.warn(`⚠️ Email attempt ${attempt} failed:`, {
           error: lastError.message,
           to: options.to,
           subject: options.subject,
@@ -731,9 +765,6 @@ async function sendEmails(data: {
   };
 
   try {
-    await transporter.verify();
-    console.log('SMTP connection verified successfully');
-
     // Send Client Email
     await sendWithRetry({
       from: `"AlMaghrib Academy" <${fromEmail}>`,
@@ -746,7 +777,7 @@ async function sendEmails(data: {
         'Importance': 'Normal',
       },
     });
-    console.log('Client email sent successfully to:', email);
+    // console.log('✅ Client email sent successfully to:', email);
 
     // Send Admin Email
     await sendWithRetry({
@@ -760,15 +791,16 @@ async function sendEmails(data: {
         'Importance': 'High',
       },
     });
-    console.log('Admin email sent successfully to:', adminEmail);
+    // console.log('✅ Admin email sent successfully to:', adminEmail);
 
   } catch (emailError) {
-    console.error('Email sending error:', {
+    console.error('❌ Email sending error:', {
       error: emailError instanceof Error ? emailError.message : 'Unknown error',
       contactId,
       email,
       adminEmail,
     });
+    // Don't throw - we don't want to fail the request if email fails
   }
 }
 

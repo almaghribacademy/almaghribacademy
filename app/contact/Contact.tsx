@@ -7,7 +7,59 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-
+// Custom Loader Component
+const Loader = () => (
+  <div className="custom-loader-container">
+    <div className="custom-loader">
+      <div className="loader-spinner"></div>
+      <p className="loader-text">Sending your message...</p>
+    </div>
+    <style jsx>{`
+      .custom-loader-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        backdrop-filter: blur(5px);
+      }
+      .custom-loader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 40px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      }
+      .loader-spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid #e8f0fe;
+        border-top: 4px solid #0a2e7a;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      .loader-text {
+        color: #0a2e7a;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    `}</style>
+  </div>
+);
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -78,7 +130,6 @@ export default function ContactPage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     
-    // Apply input restrictions
     let sanitizedValue = value;
     if (name === "fullName") {
       sanitizedValue = value.replace(/[^A-Za-z\s'-]/g, "");
@@ -91,7 +142,6 @@ export default function ContactPage() {
       [name]: sanitizedValue,
     });
 
-    // Clear error on change
     if (errors[name]) {
       setErrors({ ...errors, [name]: "" });
     }
@@ -124,7 +174,6 @@ export default function ContactPage() {
     e.preventDefault();
 
     if (!validateForm()) {
-      // Scroll to first error
       const firstError = Object.keys(errors)[0];
       const element = document.querySelector(`[name="${firstError}"]`);
       if (element) {
@@ -148,11 +197,14 @@ export default function ContactPage() {
       const data = await response.json();
 
       if (response.ok) {
-        Swal.fire({
+        // Success - show SweetAlert
+        await Swal.fire({
           icon: "success",
           title: "Message Sent! 🎉",
           text: "Thank you for contacting us! We'll reach out to you soon.",
           confirmButtonColor: "#0a2e7a",
+          timer: 5000,
+          timerProgressBar: true,
         });
 
         setFormData({
@@ -164,28 +216,39 @@ export default function ContactPage() {
         });
         setErrors({});
       } else {
-        Swal.fire({
+        // Handle specific error cases
+        let errorMessage = data.message || "Failed to send message. Please try again.";
+        
+        if (response.status === 429) {
+          errorMessage = data.message || "Too many requests. Please wait before trying again.";
+        }
+        
+        await Swal.fire({
           icon: "error",
           title: "Error",
-          text: data.message || "Failed to send message. Please try again.",
+          text: errorMessage,
           confirmButtonColor: "#0a2e7a",
         });
       }
     } catch (error) {
-      Swal.fire({
+      console.error("Contact form error:", error);
+      await Swal.fire({
         icon: "error",
-        title: "Error",
-        text: "Something went wrong. Please try again.",
+        title: "Connection Error",
+        text: "Unable to connect to the server. Please check your internet connection and try again.",
         confirmButtonColor: "#0a2e7a",
       });
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
     <>
       <Header />
+
+      {/* Show loader when loading */}
+      {loading && <Loader />}
 
       <main className="contact-page">
         {/* Hero Section */}
@@ -254,6 +317,7 @@ export default function ContactPage() {
                       onBlur={handleBlur}
                       className={errors.fullName ? "error" : ""}
                       required
+                      disabled={loading}
                     />
                     {errors.fullName && <span className="error-message">{errors.fullName}</span>}
                   </div>
@@ -272,6 +336,7 @@ export default function ContactPage() {
                       onBlur={handleBlur}
                       className={errors.email ? "error" : ""}
                       required
+                      disabled={loading}
                     />
                     {errors.email && <span className="error-message">{errors.email}</span>}
                   </div>
@@ -290,6 +355,7 @@ export default function ContactPage() {
                       onBlur={handleBlur}
                       className={errors.phone ? "error" : ""}
                       required
+                      disabled={loading}
                     />
                     {errors.phone && <span className="error-message">{errors.phone}</span>}
                     <small className="helper-text">Only numbers (7-15 digits)</small>
@@ -309,6 +375,7 @@ export default function ContactPage() {
                       onBlur={handleBlur}
                       className={errors.subject ? "error" : ""}
                       required
+                      disabled={loading}
                     />
                     {errors.subject && <span className="error-message">{errors.subject}</span>}
                   </div>
@@ -327,7 +394,8 @@ export default function ContactPage() {
                       onBlur={handleBlur}
                       className={errors.message ? "error" : ""}
                       required
-                    ></textarea>
+                      disabled={loading}
+                    />
                     {errors.message && <span className="error-message">{errors.message}</span>}
                     <div className="char-count">
                       <span className={formData.message.length > 1000 ? "over-limit" : ""}>
@@ -336,8 +404,15 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <button type="submit" disabled={loading}>
-                    {loading ? "Sending..." : "Send Message"}
+                  <button type="submit" disabled={loading} className={loading ? "loading" : ""}>
+                    {loading ? (
+                      <>
+                        <span className="button-spinner"></span>
+                        Sending...
+                      </>
+                    ) : (
+                      "Send Message"
+                    )}
                   </button>
                 </form>
               </div>
@@ -347,8 +422,6 @@ export default function ContactPage() {
       </main>
 
       <Footer />
-
-      
     </>
   );
 }
