@@ -19,7 +19,7 @@ if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 // 2. ENVIRONMENT VARIABLES VALIDATION (FIXED)
 // ============================================
 const envSchema = z.object({
-  SMTP_HOST: z.string().min(1).default('smtp.zoho.com'),
+  SMTP_HOST: z.string().min(1).default('smtppro.zoho.com'),
   SMTP_PORT: z
   .string()
   .default("587")
@@ -45,7 +45,7 @@ if (!result.success) {
 
 // Use parsed values or defaults
 const config = result.success ? result.data : {
-  SMTP_HOST: 'smtp.zoho.com',
+  SMTP_HOST: 'smtppro.zoho.com',
   SMTP_PORT: 587,
   SMTP_USER: process.env.SMTP_USER || '',
   SMTP_PASS: process.env.SMTP_PASS || '',
