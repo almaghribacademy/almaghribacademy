@@ -22,7 +22,7 @@ const envSchema = z.object({
   SMTP_HOST: z.string().min(1).default('smtppro.zoho.com'),
   SMTP_PORT: z
   .string()
-  .default("587")
+  .default("465")
   .transform(Number)
   .pipe(z.number().int().positive()),
   SMTP_USER: z.string().min(1),
@@ -46,7 +46,7 @@ if (!result.success) {
 // Use parsed values or defaults
 const config = result.success ? result.data : {
   SMTP_HOST: 'smtppro.zoho.com',
-  SMTP_PORT: 587,
+  SMTP_PORT: 465,
   SMTP_USER: process.env.SMTP_USER || '',
   SMTP_PASS: process.env.SMTP_PASS || '',
   SMTP_FROM: 'contact@almaghrib.academy',
