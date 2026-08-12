@@ -231,10 +231,10 @@ async function sendConfirmationEmail(data: any) {
 
   // ✅ Add debug logging
   console.log(`📧 Attempting to send confirmation email to: ${email}`);
-  console.log(`📧 Using SMTP from: ${process.env.SMTP_FROM || "contact@AlMaghribacademy.co"}`);
+  console.log(`📧 Using SMTP from: ${process.env.SMTP_FROM || "contact@almaghrib.academy"}`);
 
   const mailOptions = {
-    from: `"AlMaghrib Academy" <${process.env.SMTP_FROM || "contact@AlMaghribacademy.co"}>`,
+    from: `"AlMaghrib Academy" <${process.env.SMTP_FROM || "contact@almaghrib.academy"}>`,
     to: email,
     subject: "✅ Registration Confirmation - AlMaghrib Academy",
     html: `
@@ -285,11 +285,11 @@ async function sendAdminNotification(data: any) {
     trialDate, preferredTime, ampm, generatedStudentId 
   } = data;
 
-  const adminEmail = process.env.ADMIN_EMAIL || "contact@AlMaghribacademy.co";
+  const adminEmail = process.env.ADMIN_EMAIL || "contact@almaghrib.academy";
   console.log(`📧 Attempting to send admin notification to: ${adminEmail}`);
 
   const mailOptions = {
-    from: `"AlMaghrib Academy" <${process.env.SMTP_FROM || "contact@AlMaghribacademy.co"}>`,
+    from: `"AlMaghrib Academy" <${process.env.SMTP_FROM || "contact@almaghrib.academy"}>`,
     to: adminEmail,
     subject: "🔔 New Student Registration - AlMaghrib Academy",
     html: `

@@ -24,8 +24,8 @@ const envSchema = z.object({
   SMTP_PORT: z.string().default('587').transform(Number).pipe(z.number().int().positive()),
   SMTP_USER: z.string().default(''),
   SMTP_PASS: z.string().default(''),
-  SMTP_FROM: z.string().email().default('contact@AlMaghribacademy.co'),
-  ADMIN_EMAIL: z.string().email().default('contact@AlMaghribacademy.co'),
+  SMTP_FROM: z.string().email().default('contact@almaghrib.academy'),
+  ADMIN_EMAIL: z.string().email().default('contact@almaghrib.academy'),
   NODE_ENV: z.string().default('development'),
 });
 
@@ -38,8 +38,8 @@ const config = {
   SMTP_PORT: parseInt(process.env.SMTP_PORT || '587'),
   SMTP_USER: process.env.SMTP_USER || '',
   SMTP_PASS: process.env.SMTP_PASS || '',
-  SMTP_FROM: process.env.SMTP_FROM || 'contact@AlMaghribacademy.co',
-  ADMIN_EMAIL: process.env.ADMIN_EMAIL || 'contact@AlMaghribacademy.co',
+  SMTP_FROM: process.env.SMTP_FROM || 'contact@almaghrib.academy',
+  ADMIN_EMAIL: process.env.ADMIN_EMAIL || 'contact@almaghrib.academy',
   NODE_ENV: process.env.NODE_ENV || 'development',
 };
 

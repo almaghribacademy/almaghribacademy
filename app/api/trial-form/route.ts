@@ -252,7 +252,7 @@ async function sendEmails(data: any) {
   const formattedSource = source || 'Not specified';
   const detectedCountryText = detectedCountry || 'Not detected';
 
-  const fromEmail = process.env.SMTP_FROM || 'contact@AlMaghribacademy.co';
+  const fromEmail = process.env.SMTP_FROM || 'contact@almaghrib.academy';
 
   try {
     // Verify transporter connection
@@ -451,7 +451,7 @@ async function sendEmails(data: any) {
           <div class="footer">
             <p style="margin: 0;">© ${new Date().getFullYear()} AlMaghrib Academy. All rights reserved.</p>
             <p style="margin: 5px 0 0; font-size: 12px;">
-              <a href="mailto:contact@AlMaghribacademy.co" style="color: #0a2e7a;">contact@AlMaghribacademy.co</a> | 
+              <a href="mailto:contact@almaghrib.academy" style="color: #0a2e7a;">contact@almaghrib.academy</a> | 
               <a href="tel:+447700181874" style="color: #0a2e7a;">+44 7700 181874</a>
             </p>
           </div>
@@ -697,11 +697,11 @@ async function sendEmails(data: any) {
 
     await transporter.sendMail({
       from: `"AlMaghrib Academy Website" <${fromEmail}>`,
-      to: 'contact@AlMaghribacademy.co',
+      to: 'contact@almaghrib.academy',
       subject: '📝 New Trial Booking - Action Required',
       html: adminEmailHtml,
     });
-    console.log('✅ Admin email sent to: contact@AlMaghribacademy.co');
+    console.log('✅ Admin email sent to: contact@almaghrib.academy');
 
   } catch (emailError) {
     console.error('❌ Email sending error:', emailError);

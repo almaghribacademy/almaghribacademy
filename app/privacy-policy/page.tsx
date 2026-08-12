@@ -396,7 +396,7 @@ export default function PrivacyPolicyPage() {
             <strong>AlMaghrib Academy</strong>
           </p>
 
-          <p>Email: contact@AlMaghribacademy.co</p>
+          <p>Email: contact@almaghrib.academy</p>
 
           <p>Phone: +44 7700 181874</p>
         </section>

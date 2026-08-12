@@ -379,7 +379,7 @@ export default function TermsPage() {
                       padding: "12px",
                     }}
                   >
-                    contact@AlMaghribacademy.co
+                    contact@almaghrib.academy
                   </td>
                 </tr>
 

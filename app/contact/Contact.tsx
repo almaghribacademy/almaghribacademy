@@ -216,7 +216,7 @@ export default function ContactPage() {
 
                 <div className="info-card">
                   <h3>📧 Email</h3>
-                  <p>contact@AlMaghribacademy.co</p>
+                  <p>contact@almaghrib.academy</p>
                 </div>
 
                 <div className="info-card">
