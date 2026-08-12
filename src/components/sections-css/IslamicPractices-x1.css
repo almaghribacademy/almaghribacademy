@@ -1,0 +1,531 @@
+/*-------Islamic-studies-section---*/
+
+/* Section */
+.islamic-practices-section {
+  padding: 100px 0;
+  background: #ffffff; /* White background */
+}
+
+/* Container */
+.islamic-practices-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* Subtitle (Optional) */
+.islamic-practices-subtitle {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #ff1493;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+
+/* Title */
+.islamic-practices-title {
+  text-align: center;
+  font-size: 52px;
+  font-weight: 800;
+  color: #0a2e7a;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+/* Description */
+.islamic-practices-description {
+  max-width: 850px;
+  margin: 20px auto 60px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #6b7280;
+}
+
+/* Grid */
+.islamic-practices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Card */
+.islamic-practice-card {
+  position: relative;
+  background: #ffffff;
+  backdrop-filter: blur(20px);
+  border-radius: 28px;
+  padding: 40px 30px;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(10, 46, 122, 0.06);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.islamic-practice-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(10, 46, 122, 0.12);
+  border-color: rgba(255, 20, 147, 0.1);
+}
+
+/* Glow Circle */
+.islamic-practice-card::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(255, 20, 147, 0.08), transparent 70%);
+  top: -100px;
+  right: -100px;
+  transition: 0.4s;
+}
+
+.islamic-practice-card:hover::before {
+  transform: scale(1.3);
+}
+
+/* Icon Circle */
+.islamic-practice-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: #f0f4ff;
+  color: #0a2e7a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+  box-shadow: 0 15px 30px rgba(10, 46, 122, 0.08);
+  transition: 0.4s;
+  flex-shrink: 0;
+}
+
+.islamic-practice-card:hover .islamic-practice-icon {
+  background: #ff1493;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 20, 147, 0.2);
+}
+
+/* Title */
+.islamic-practice-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0a2e7a;
+  transition: 0.3s;
+  margin-bottom: 8px;
+}
+
+.islamic-practice-card:hover .islamic-practice-name {
+  color: #ff1493;
+}
+
+/* Description Text inside card */
+.islamic-practice-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+============================================ */
+
+/* ===== LAPTOP (1200px and below) ===== */
+@media (max-width: 1200px) {
+  .islamic-practices-grid {
+    gap: 24px;
+  }
+
+  .islamic-practice-card {
+    padding: 32px 24px;
+    border-radius: 24px;
+  }
+
+  .islamic-practice-icon {
+    width: 72px;
+    height: 72px;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .islamic-practice-name {
+    font-size: 22px;
+  }
+
+  .islamic-practice-text {
+    font-size: 14px;
+  }
+}
+
+/* ===== TABLET (992px and below) ===== */
+@media (max-width: 992px) {
+  .islamic-practices-section {
+    padding: 72px 0;
+  }
+
+  .islamic-practices-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .islamic-practices-title {
+    font-size: 42px;
+    margin-bottom: 16px;
+  }
+
+  .islamic-practice-card {
+    padding: 30px 24px;
+    border-radius: 22px;
+  }
+
+  .islamic-practice-icon {
+    width: 68px;
+    height: 68px;
+    font-size: 26px;
+    margin-bottom: 18px;
+  }
+
+  .islamic-practice-name {
+    font-size: 20px;
+  }
+
+  .islamic-practice-text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .islamic-practices-description {
+    font-size: 17px;
+    margin: 16px auto 48px;
+    padding: 0 20px;
+  }
+
+  .islamic-practice-card::before {
+    width: 180px;
+    height: 180px;
+    top: -80px;
+    right: -80px;
+  }
+}
+
+/* ===== MOBILE (768px and below) ===== */
+@media (max-width: 768px) {
+  .islamic-practices-section {
+    padding: 56px 0;
+  }
+
+  .islamic-practices-container {
+    padding: 0 20px;
+  }
+
+  .islamic-practices-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 420px;
+  }
+
+  .islamic-practices-title {
+    font-size: 34px;
+    margin-bottom: 14px;
+  }
+
+  .islamic-practice-card {
+    padding: 28px 24px;
+    border-radius: 20px;
+  }
+
+  .islamic-practice-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .islamic-practice-name {
+    font-size: 19px;
+    margin-bottom: 6px;
+  }
+
+  .islamic-practice-text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .islamic-practices-description {
+    font-size: 15px;
+    margin: 14px auto 36px;
+    padding: 0 10px;
+    line-height: 1.7;
+  }
+
+  .islamic-practices-subtitle {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .islamic-practice-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .islamic-practice-card::before {
+    width: 160px;
+    height: 160px;
+    top: -70px;
+    right: -70px;
+  }
+}
+
+/* ===== SMALL MOBILE (480px and below) ===== */
+@media (max-width: 480px) {
+  .islamic-practices-section {
+    padding: 40px 0;
+  }
+
+  .islamic-practices-container {
+    padding: 0 16px;
+  }
+
+  .islamic-practices-grid {
+    gap: 16px;
+    max-width: 360px;
+  }
+
+  .islamic-practices-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .islamic-practice-card {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .islamic-practice-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 10px 25px rgba(10, 46, 122, 0.08);
+  }
+
+  .islamic-practice-name {
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+
+  .islamic-practice-text {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .islamic-practices-description {
+    font-size: 14px;
+    margin: 12px auto 28px;
+    padding: 0 8px;
+    line-height: 1.6;
+  }
+
+  .islamic-practices-subtitle {
+    font-size: 11px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .islamic-practice-card::before {
+    width: 130px;
+    height: 130px;
+    top: -60px;
+    right: -60px;
+  }
+
+  .islamic-practice-card:hover::before {
+    transform: scale(1.2);
+  }
+}
+
+/* ===== EXTRA SMALL (360px and below) ===== */
+@media (max-width: 360px) {
+  .islamic-practices-section {
+    padding: 32px 0;
+  }
+
+  .islamic-practices-container {
+    padding: 0 12px;
+  }
+
+  .islamic-practices-grid {
+    gap: 14px;
+    max-width: 320px;
+  }
+
+  .islamic-practices-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .islamic-practice-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .islamic-practice-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .islamic-practice-name {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .islamic-practice-text {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .islamic-practices-description {
+    font-size: 13px;
+    margin: 10px auto 24px;
+    padding: 0 5px;
+    line-height: 1.5;
+  }
+
+  .islamic-practice-card::before {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    right: -50px;
+  }
+}
+
+/* ===== LARGE SCREENS (1400px and above) ===== */
+@media (min-width: 1400px) {
+  .islamic-practices-section {
+    padding: 120px 0;
+  }
+
+  .islamic-practices-container {
+    max-width: 1400px;
+    padding: 0 40px;
+  }
+
+  .islamic-practices-grid {
+    gap: 36px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .islamic-practice-card {
+    padding: 48px 36px;
+    border-radius: 32px;
+  }
+
+  .islamic-practice-icon {
+    width: 90px;
+    height: 90px;
+    font-size: 36px;
+    margin-bottom: 28px;
+  }
+
+  .islamic-practice-name {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .islamic-practice-text {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .islamic-practices-title {
+    font-size: 60px;
+    margin-bottom: 24px;
+  }
+
+  .islamic-practices-description {
+    font-size: 20px;
+    max-width: 900px;
+    margin: 24px auto 70px;
+  }
+
+  .islamic-practices-subtitle {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  .islamic-practice-card::before {
+    width: 260px;
+    height: 260px;
+    top: -120px;
+    right: -120px;
+  }
+}
+
+/* ===== LANDSCAPE MOBILE ===== */
+@media (max-height: 600px) and (orientation: landscape) {
+  .islamic-practices-section {
+    padding: 32px 0;
+  }
+
+  .islamic-practices-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 100%;
+  }
+
+  .islamic-practice-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+
+  .islamic-practice-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .islamic-practice-name {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .islamic-practice-text {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .islamic-practices-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .islamic-practices-description {
+    font-size: 14px;
+    margin: 10px auto 24px;
+    padding: 0 20px;
+  }
+
+  .islamic-practice-card::before {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    right: -50px;
+  }
+}

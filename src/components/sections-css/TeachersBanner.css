@@ -1,0 +1,419 @@
+/*-------------Teacher-Banner---------*/
+
+/* Section */
+.cta-section-section {
+  padding: 80px 0;
+  background: #ffffff; /* White background */
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(10, 46, 122, 0.06);
+  border-bottom: 1px solid rgba(10, 46, 122, 0.06);
+}
+
+/* Optional Background Decoration */
+.cta-section-section::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: rgba(10, 46, 122, 0.04); /* Light Blue */
+  border-radius: 50%;
+  top: -150px;
+  left: -100px;
+}
+
+.cta-section-section::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 20, 147, 0.05); /* Light Pink */
+  border-radius: 50%;
+  bottom: -120px;
+  right: -80px;
+}
+
+/* Container */
+.cta-section-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Subtitle (Optional) */
+.cta-section-subtitle {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #ff1493; /* Pink */
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Title */
+.cta-section-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #0a2e7a; /* Dark Blue */
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+/* Description */
+.cta-section-description {
+  max-width: 700px;
+  margin: 0 auto 36px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #6b7280; /* Gray */
+}
+
+/* Button */
+.cta-section-button {
+  background: #0a2e7a; /* Dark Blue */
+  color: #ffffff;
+  border: none;
+  padding: 16px 38px;
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta-section-button:hover {
+  background: #ff1493; /* Pink on hover */
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(255, 20, 147, 0.3);
+}
+
+/* Button with Arrow */
+.cta-section-button::after {
+  content: "→";
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.cta-section-button:hover::after {
+  transform: translateX(5px);
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+============================================ */
+
+/* ===== TABLET (992px and below) ===== */
+@media (max-width: 992px) {
+  .cta-section-section {
+    padding: 64px 0;
+  }
+
+  .cta-section-title {
+    font-size: 40px;
+  }
+
+  .cta-section-description {
+    font-size: 17px;
+    margin-bottom: 32px;
+  }
+
+  .cta-section-section::before {
+    width: 250px;
+    height: 250px;
+    top: -120px;
+    left: -80px;
+  }
+
+  .cta-section-section::after {
+    width: 200px;
+    height: 200px;
+    bottom: -100px;
+    right: -60px;
+  }
+}
+
+/* ===== MOBILE (768px and below) ===== */
+@media (max-width: 768px) {
+  .cta-section-section {
+    padding: 56px 0;
+  }
+
+  .cta-section-container {
+    padding: 0 20px;
+  }
+
+  .cta-section-title {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .cta-section-description {
+    font-size: 15px;
+    margin: 0 auto 28px;
+    padding: 0 10px;
+    line-height: 1.7;
+  }
+
+  .cta-section-button {
+    padding: 14px 32px;
+    font-size: 15px;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .cta-section-button::after {
+    font-size: 18px;
+  }
+
+  .cta-section-subtitle {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .cta-section-section::before {
+    width: 180px;
+    height: 180px;
+    top: -100px;
+    left: -60px;
+  }
+
+  .cta-section-section::after {
+    width: 150px;
+    height: 150px;
+    bottom: -80px;
+    right: -50px;
+  }
+}
+
+/* ===== SMALL MOBILE (480px and below) ===== */
+@media (max-width: 480px) {
+  .cta-section-section {
+    padding: 40px 0;
+  }
+
+  .cta-section-container {
+    padding: 0 16px;
+  }
+
+  .cta-section-title {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .cta-section-description {
+    font-size: 14px;
+    margin: 0 auto 24px;
+    padding: 0 8px;
+    line-height: 1.6;
+  }
+
+  .cta-section-button {
+    padding: 12px 28px;
+    font-size: 14px;
+    max-width: 240px;
+    gap: 8px;
+  }
+
+  .cta-section-button::after {
+    font-size: 16px;
+  }
+
+  .cta-section-subtitle {
+    font-size: 11px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .cta-section-section::before {
+    width: 140px;
+    height: 140px;
+    top: -80px;
+    left: -50px;
+  }
+
+  .cta-section-section::after {
+    width: 120px;
+    height: 120px;
+    bottom: -60px;
+    right: -40px;
+  }
+}
+
+/* ===== EXTRA SMALL (360px and below) ===== */
+@media (max-width: 360px) {
+  .cta-section-section {
+    padding: 32px 0;
+  }
+
+  .cta-section-container {
+    padding: 0 12px;
+  }
+
+  .cta-section-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .cta-section-description {
+    font-size: 13px;
+    margin: 0 auto 20px;
+    padding: 0 5px;
+    line-height: 1.5;
+  }
+
+  .cta-section-button {
+    padding: 10px 24px;
+    font-size: 13px;
+    max-width: 200px;
+  }
+
+  .cta-section-button::after {
+    font-size: 14px;
+  }
+
+  .cta-section-section::before {
+    width: 100px;
+    height: 100px;
+    top: -60px;
+    left: -40px;
+  }
+
+  .cta-section-section::after {
+    width: 80px;
+    height: 80px;
+    bottom: -40px;
+    right: -30px;
+  }
+}
+
+/* ===== LARGE SCREENS (1400px and above) ===== */
+@media (min-width: 1400px) {
+  .cta-section-section {
+    padding: 100px 0;
+  }
+
+  .cta-section-container {
+    max-width: 1000px;
+  }
+
+  .cta-section-title {
+    font-size: 56px;
+    margin-bottom: 24px;
+  }
+
+  .cta-section-description {
+    font-size: 20px;
+    max-width: 800px;
+    margin-bottom: 40px;
+  }
+
+  .cta-section-button {
+    padding: 20px 44px;
+    font-size: 19px;
+  }
+
+  .cta-section-subtitle {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  .cta-section-section::before {
+    width: 400px;
+    height: 400px;
+    top: -180px;
+    left: -120px;
+  }
+
+  .cta-section-section::after {
+    width: 320px;
+    height: 320px;
+    bottom: -150px;
+    right: -100px;
+  }
+}
+
+/* ===== LANDSCAPE MOBILE ===== */
+@media (max-height: 600px) and (orientation: landscape) {
+  .cta-section-section {
+    padding: 32px 0;
+  }
+
+  .cta-section-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .cta-section-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+
+  .cta-section-button {
+    padding: 10px 28px;
+    font-size: 14px;
+  }
+
+  .cta-section-section::before {
+    width: 120px;
+    height: 120px;
+    top: -60px;
+    left: -40px;
+  }
+
+  .cta-section-section::after {
+    width: 100px;
+    height: 100px;
+    bottom: -40px;
+    right: -30px;
+  }
+}
+
+/* ===== DARK MODE SUPPORT (Optional) ===== */
+@media (prefers-color-scheme: dark) {
+  .cta-section-section {
+    background: #0a2e7a; /* Dark Blue */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .cta-section-title {
+    color: #ffffff;
+  }
+
+  .cta-section-description {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .cta-section-button {
+    background: #ff1493; /* Pink */
+    color: #ffffff;
+  }
+
+  .cta-section-button:hover {
+    background: #ffffff;
+    color: #0a2e7a;
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+  }
+
+  .cta-section-section::before {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .cta-section-section::after {
+    background: rgba(255, 20, 147, 0.1);
+  }
+
+  .cta-section-subtitle {
+    color: #ff1493;
+  }
+}

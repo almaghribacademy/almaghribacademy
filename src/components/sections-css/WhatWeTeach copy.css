@@ -1,0 +1,268 @@
+/*---------What-we-teach---------*/
+
+/* Section */
+.courses-section {
+  padding: 96px 0;
+  background: #fff;
+}
+
+/* Container */
+.courses-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Heading */
+.courses-title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  color: #0a2e7a;
+  margin-bottom: 20px;
+}
+
+.courses-description{
+  max-width: 800px;
+  margin: 0 auto 60px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #6b7280;
+  text-align: center;
+}
+
+.course-btn{
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-start; /* Change from 'center' to 'flex-start' */
+    width: 100%;
+
+}
+
+.cards{
+    width:min(1500px,100%);
+    margin:auto;
+    padding:0 50px;
+    margin-top: 50px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* Card */
+
+.card{
+    height:480px;
+    border-radius:28px;
+    padding:35px;
+    position:relative;
+    overflow:hidden;
+    transition:.35s;
+    box-shadow:0 10px 40px rgba(0,0,0,.05);
+    font-weight:400;
+    font-size: 18px;
+    color: #6b7280;
+}
+
+.black-text{
+  color: #4d4d4d;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/* Pattern */
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.05;
+
+    background-image:
+    radial-gradient(#000 1px,transparent 1px);
+
+    background-size:18px 18px;
+}
+
+/* Decorative Circle */
+
+.circle{
+    position:absolute;
+    right:-70px;
+    top:30px;
+    width:240px;
+    height:240px;
+    border-radius:50%;
+    background:rgba(255,255,255,.18);
+}
+
+/* Badge */
+
+.badge{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:10px;
+    background:white;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+/* Content */
+
+.content{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    color: #0a2e7a;
+    padding-top: 10px;
+}
+
+.content h2{
+    font-size:42px;
+    margin-bottom:15px;
+    margin-top: 15px;
+    line-height:1.1;
+    font-weight: 600;
+}
+
+.content p{
+    flex:1;
+}
+
+.content a{
+    text-decoration:none;
+    color:#0a2e7a;
+    font-size:20px;
+    font-weight:400;
+    margin-bottom: 25px;
+    margin-top:auto; /* pushes button to bottom */
+    width: 170px;
+}
+
+.learn-more-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* Keep this to center text inside button */
+  gap: 8px;
+  text-decoration: none;
+  color: #0a2e7a;
+  font-weight: 400;
+  position: relative;
+  z-index: 20;
+  background: #faf5ff;
+  padding: 14px 32px;
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  width: 175px; /* Fixed width */
+  /* Remove 'margin: 0 auto' if you have it */
+}   
+
+/* Hover State */
+.learn-more-link:hover {
+  background: #0a2e7a; /* Navy blue on hover */
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(10, 46, 122, 0.25);
+}
+
+/* Active/Click State */
+.learn-more-link:active {
+  transform: translateY(0px);
+  box-shadow: 0 5px 15px rgba(10, 46, 122, 0.15);
+}
+
+/* Focus State for Accessibility */
+/*.learn-more-link:focus {
+  outline: 2px solid #ff1493;
+  outline-offset: 3px;
+}*/
+
+/* Add arrow icon after text */
+/*.learn-more-link::after {
+  transition: transform 0.3s ease;
+  font-size: 18px;
+}*/
+
+.learn-more-link:hover::after {
+  transform: translateX(5px);
+}
+/* Card Colors */
+
+.card1{
+    background:#eadcc9;
+}
+.card1 .badge{
+    color:#be875a;
+}
+
+.card2{
+    background:#e8e2f8;
+}
+.card2 .badge{
+    color:#7c5ad5;
+}
+
+.card3{
+    background:#dfead9;
+}
+.card3 .badge{
+    color:#65965a;
+}
+
+.card6{
+    background:#f5e4d6;
+}
+.card6 .badge{
+    color:#d07c43;
+}
+
+.card5{
+    background:#f1ddeb;
+}
+.card5 .badge{
+    color:#c856af;
+}
+
+.card4{
+    background:#dcecf5;
+}
+.card4 .badge{
+    color:#4b8cb7;
+}
+
+/* Simple Islamic Decoration */
+
+.icon{
+    position:absolute;
+    right:50px;
+    bottom:30px;
+    font-size:120px;
+    opacity:.12;
+    font-weight:800;
+}
+
+/* Responsive */
+
+@media(max-width:1200px){
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .cards{
+        grid-template-columns:1fr;
+        padding:0 20px;
+    }
+
+}

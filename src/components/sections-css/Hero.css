@@ -1,0 +1,369 @@
+/*-------Hero---Section--------*/
+
+.hero-section {
+  padding: 50px 0;
+  overflow: hidden;
+  padding-top: 120px;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: clamp(20px, 5vw, 80px);
+  padding-right: clamp(20px, 5vw, 80px);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 56% 40%;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-tagline {
+  color: #0a2e7a;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.pink-text {
+  color: #ff1493;
+}
+
+.hero-title {
+  margin-top: 24px;
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #0a2e7a;
+}
+
+.hero-description {
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #64748b;
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-btn-primary {
+  background: #0a2e7a;
+  color: #ffffff;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-btn-primary:hover {
+  background: rgb(255, 20, 147);
+  transform: translateY(-2px);
+}
+
+.hero-btn-secondary {
+  background: #fff;
+  color: #0a2e7a;
+  border: 2px solid #0a2e7a;
+  padding: 16px 32px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-btn-secondary:hover {
+  background: #0a2e7a;
+  color: #ffffff;
+}
+
+/* ========== UPDATED IMAGE STYLES ========== */
+.hero-images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-image-circle {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 8px solid #e0f2fe;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
+/* FIX: Ensure images render clearly */
+.hero-image-circle .hero-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* Alternative: Target Next.js Image wrapper */
+.hero-image-circle span {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+.hero-image-circle img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  image-rendering: auto !important;
+}
+
+/* Remove transforms that might cause blur */
+.boy-image,
+.girl-image {
+  transform: none !important;
+}
+
+/* If you want slight offset, use margin instead */
+.boy-image {
+  margin-top: -40px;
+}
+
+.girl-image {
+  margin-top: 40px;
+}
+
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 38px;
+  }
+
+  .hero-image-circle {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-images {
+    flex-direction: column;
+  }
+
+  .boy-image,
+  .girl-image {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Floating Badges */
+.floating-icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  animation: float 4s ease-in-out infinite;
+  z-index: 10;
+}
+
+.icon-1 {
+  top: -50px;
+  left: 190px;
+}
+
+.icon-2 {
+  top: 40px;
+  right: 40px;
+  animation-delay: 1s;
+}
+
+.icon-3 {
+  bottom: 20px;
+  left: 20px;
+  animation-delay: 2s;
+}
+
+.icon-4 {
+  bottom: -60px;
+  right: 100px;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/*-------New-----Hero------Section--------*/
+
+/* ===================================
+   ISLAMIC DECORATIONS
+=================================== */
+
+.hero-content {
+  position: relative;
+}
+
+/* Watermark Pattern */
+.hero-islamic-bg {
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 280px;
+  height: 280px;
+  background-image: radial-gradient(
+    circle at center,
+    rgba(16, 185, 129, 0.12) 2px,
+    transparent 2px
+  );
+  background-size: 24px 24px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Images Container */
+.hero-images {
+  position: relative;
+}
+
+/* Geometric Patterns */
+.islamic-pattern {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  opacity: 0.08;
+  border: 3px solid #10b981;
+  transform: rotate(45deg);
+  border-radius: 16px;
+}
+
+.pattern-top-left {
+  top: -30px;
+  left: -30px;
+}
+
+.pattern-bottom-right {
+  bottom: -30px;
+  right: -30px;
+}
+
+/* Crescent Moon */
+.crescent-decoration {
+  position: absolute;
+  top: -140px;
+  right: -25px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 8px 10 #0a2e7a;
+  opacity: 1;
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Stars */
+.star-decoration {
+  position: absolute;
+  color: deeppink;
+  font-size: 25px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.star-1 {
+  top: -50px;
+  left: 10px;
+}
+
+.star-2 {
+  top: 0px;
+  right: 25px;
+}
+
+.star-3 {
+  bottom: -30px;
+  left: 60px;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/*-------add--seo-content------*/
+.hero-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.hero-features span {
+  background: #f2f3f8e6;
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #111827;
+}

@@ -1,0 +1,479 @@
+/* ============================================
+   MAINTENANCE PAGE STYLES
+============================================ */
+
+.maintenance-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.maintenance-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 40px;
+  padding: 60px 50px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 50px 100px rgba(10, 46, 122, 0.15);
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Background Decorations ===== */
+.bg-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  background: #ff1493;
+  top: -150px;
+  right: -100px;
+  animation: floatBg 8s ease-in-out infinite;
+}
+
+.circle-2 {
+  width: 200px;
+  height: 200px;
+  background: #0a2e7a;
+  bottom: -80px;
+  left: -80px;
+  animation: floatBg 10s ease-in-out infinite reverse;
+}
+
+.circle-3 {
+  width: 120px;
+  height: 120px;
+  background: #10b981;
+  top: 40%;
+  left: -60px;
+  animation: floatBg 6s ease-in-out infinite;
+}
+
+.circle-4 {
+  width: 150px;
+  height: 150px;
+  background: #f59e0b;
+  bottom: 30%;
+  right: -70px;
+  animation: floatBg 7s ease-in-out infinite reverse;
+}
+
+@keyframes floatBg {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -20px) scale(1.1); }
+}
+
+/* ===== Content Styles ===== */
+.maintenance-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Icon */
+.maintenance-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 30px;
+  background: linear-gradient(135deg, #ff1493, #ff6b9d);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.icon-tools {
+  width: 50px;
+  height: 50px;
+  color: white;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 20, 147, 0.1);
+  color: #ff1493;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 20, 147, 0.2);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #ff1493;
+  border-radius: 50%;
+  display: inline-block;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* Title */
+.maintenance-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #0a2e7a;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+/* Description */
+.maintenance-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #64748b;
+  margin-bottom: 40px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== Progress Bar ===== */
+.progress-container {
+  margin-bottom: 40px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progress-fill {
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff1493, #0a2e7a);
+  border-radius: 50px;
+  animation: progressAnim 2.5s ease-in-out infinite;
+}
+
+@keyframes progressAnim {
+  0% { transform: translateX(-100%); width: 35%; }
+  50% { transform: translateX(0); width: 65%; }
+  100% { transform: translateX(100%); width: 35%; }
+}
+
+.progress-text {
+  font-size: 14px;
+  color: #94a3b8;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ===== Notification Form ===== */
+.notification-form {
+  background: #f8fafc;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 35px;
+  border: 1px solid #e2e8f0;
+}
+
+.form-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0a2e7a;
+  margin-bottom: 15px;
+}
+
+.email-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.email-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 50px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+  color: #1e293b;
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: #ff1493;
+  box-shadow: 0 0 0 4px rgba(255, 20, 147, 0.1);
+}
+
+.email-input::placeholder {
+  color: #94a3b8;
+}
+
+.notify-btn {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #ff1493, #ff6b9d);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.notify-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 20, 147, 0.3);
+}
+
+.notify-btn:active {
+  transform: translateY(0px);
+}
+
+/* ===== Social Links ===== */
+.social-links {
+  margin-bottom: 30px;
+}
+
+.social-label {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  background: #f1f5f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a2e7a;
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.social-link:hover {
+  background: #0a2e7a;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(10, 46, 122, 0.2);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ===== Footer ===== */
+.maintenance-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.maintenance-footer a {
+  color: #0a2e7a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.maintenance-footer a:hover {
+  color: #ff1493;
+}
+
+.footer-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.divider {
+  color: #e2e8f0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .maintenance-container {
+    padding: 40px 30px;
+  }
+
+  .maintenance-title {
+    font-size: 32px;
+  }
+
+  .maintenance-description {
+    font-size: 16px;
+  }
+
+  .email-form {
+    flex-direction: column;
+  }
+
+  .email-input {
+    min-width: 100%;
+  }
+
+  .notify-btn {
+    width: 100%;
+  }
+
+  .maintenance-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .maintenance-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .icon-tools {
+    width: 40px;
+    height: 40px;
+  }
+
+  .circle-1 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle-2 {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .maintenance-container {
+    padding: 30px 20px;
+    border-radius: 24px;
+  }
+
+  .maintenance-title {
+    font-size: 28px;
+  }
+
+  .notification-form {
+    padding: 20px;
+  }
+}
+
+/* ===== Dark Mode Support ===== */
+@media (prefers-color-scheme: dark) {
+  .maintenance-wrapper {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  }
+
+  .maintenance-container {
+    background: rgba(30, 41, 59, 0.95);
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .maintenance-title {
+    color: #f1f5f9;
+  }
+
+  .maintenance-description {
+    color: #94a3b8;
+  }
+
+  .notification-form {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  .form-label {
+    color: #f1f5f9;
+  }
+
+  .email-input {
+    background: #0f172a;
+    border-color: #334155;
+    color: #f1f5f9;
+  }
+
+  .email-input:focus {
+    border-color: #ff1493;
+  }
+
+  .social-link {
+    background: #1e293b;
+    border-color: #334155;
+    color: #f1f5f9;
+  }
+
+  .social-link:hover {
+    background: #ff1493;
+    color: white;
+  }
+
+  .maintenance-footer {
+    border-color: #334155;
+  }
+
+  .maintenance-footer a {
+    color: #94a3b8;
+  }
+
+  .maintenance-footer a:hover {
+    color: #ff1493;
+  }
+}

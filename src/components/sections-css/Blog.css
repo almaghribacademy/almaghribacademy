@@ -1,0 +1,224 @@
+/*-----Blog---Section------*/
+
+/* Section */
+.articles-section {
+  padding: 96px 0;
+  background: #ffffff;
+}
+
+
+/* Container */
+.articles-container {
+  max-width:1280px;
+  margin:auto;
+  padding:0 24px;
+}
+
+
+/* Heading */
+.articles-title {
+
+  text-align:center;
+  font-size:48px;
+  font-weight:700;
+  color:#0a2e7a;
+  margin-bottom:60px;
+
+}
+
+
+
+/* Grid */
+.articles-grid {
+  margin-top: 30px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+
+}
+
+
+.articles-description {
+  max-width: 850px;
+  margin: 20px auto 60px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #6b7280;
+}
+
+
+/* Card */
+.article-card {
+
+  background:#ffffff;
+  border-radius:28px;
+  overflow:hidden;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,.06);
+
+  border:1px solid rgba(10,46,122,.08);
+
+  transition:.4s ease;
+
+}
+
+
+
+.article-card:hover {
+
+  transform:translateY(-12px);
+
+  box-shadow:
+  0 25px 50px rgba(10,46,122,.15);
+
+}
+
+
+
+/* Image */
+.article-image {
+
+  height:230px;
+
+  background:
+  linear-gradient(
+    135deg,
+    #dbeafe,
+    #fce7f3
+  );
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+
+/* Image Hover Zoom */
+.article-card:hover .article-image {
+
+  transform:scale(1.03);
+
+}
+
+
+.article-image::after {
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(10,46,122,.15),
+    rgba(255,20,147,.15)
+  );
+
+}
+
+
+
+/* Content */
+.article-content {
+
+  padding:28px;
+
+}
+
+
+
+/* Heading */
+.article-heading {
+
+  font-size:24px;
+  font-weight:700;
+  color:#0a2e7a;
+
+  margin-bottom:20px;
+
+  line-height:1.4;
+
+}
+
+
+
+/* Button */
+.article-button {
+
+  background:none;
+  border:none;
+
+  color:#0a2e7a;
+
+  font-size:16px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  padding:0;
+
+  transition:.3s ease;
+
+}
+
+
+
+.article-button:hover {
+
+  color:#ff1493;
+
+  transform:translateX(6px);
+
+}
+
+
+
+/* Tablet */
+@media(max-width:992px){
+
+  .articles-grid {
+
+    grid-template-columns:repeat(2,1fr);
+
+  }
+
+
+  .articles-title {
+
+    font-size:40px;
+
+  }
+
+}
+
+
+
+/* Mobile */
+@media(max-width:768px){
+
+  .articles-grid {
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .articles-title {
+
+    font-size:34px;
+
+  }
+
+
+  .article-content {
+
+    padding:22px;
+
+  }
+
+}

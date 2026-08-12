@@ -1,0 +1,630 @@
+/* ============================================
+   CAREERS.CSS
+============================================ */
+
+/* ---------- ROOT VARIABLES ---------- */
+:root {
+  --navy: #0a2e7a;
+  --pink: #ff1493;
+  --radius-lg: 16px;
+  --transition: all 0.3s ease;
+}
+
+/* ---------- BASE & UTILITIES ---------- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+section {
+  padding: 80px 0;
+}
+
+h2 {
+  text-align: center;
+  color: var(--navy);
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* ---------- BUTTONS ---------- */
+.career-btn {
+  display: inline-block;
+  background: #fff;
+  color: #0a2e7a;
+  padding: 16px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.career-btn:hover {
+  color: #fff;
+  background: #e84991;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(10, 46, 122, 0.2);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 100vh;
+  height: auto;
+  background: var(--navy);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero-content {
+  color: #fff;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 35px;
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+/* ---------- VALUES SECTION ---------- */
+.values {
+  background: #ffffff;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  border: 3px solid rgba(10, 46, 122, 0.12);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #0a2e7a;
+  box-shadow: 0 15px 40px rgba(10, 46, 122, 0.08);
+}
+
+.card h3 {
+  color: #0a2e7a;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* ---------- WHY JOIN SECTION ---------- */
+.why-join {
+  background: #f7f9ff;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.benefit {
+  background: #fff;
+  border: 1.5px solid rgba(10, 46, 122, 0.10);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.benefit:hover {
+  transform: translateY(-6px);
+  border-color: var(--pink);
+  box-shadow: 0 15px 40px rgba(10, 46, 122, 0.08);
+}
+
+.benefit span {
+  color: var(--pink);
+  font-size: 2.8rem;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.benefit h3 {
+  color: var(--navy);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.benefit p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* ---------- TESTIMONIALS SECTION ---------- */
+.testimonials {
+  background: #ffffff;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonial {
+  background: #fff;
+  border: 5px solid #f5f7f9;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.testimonial:hover {
+  transform: translateY(-6px);
+  border-color: #0a2e7a;
+  box-shadow: 0 15px 40px rgba(10, 46, 122, 0.08);
+}
+
+.testimonial p {
+  color: #444;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+
+.testimonial h4 {
+  color: var(--navy);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* ---------- PERKS SECTION ---------- */
+.perks {
+  padding: 80px 5%;
+  background: #f8fafc;
+}
+
+.perk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.perk {
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  border: 2px solid rgba(10, 46, 122, 0.12);
+  color: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.6;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(10, 46, 122, 0.04);
+}
+
+.perk:hover {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(10, 46, 122, 0.15);
+}
+
+/* Perk color variants */
+.perk-blue {
+  border-color: rgba(10, 46, 122, 0.3);
+}
+.perk-pink {
+  border-color: rgba(255, 20, 147, 0.3);
+}
+.perk-purple {
+  border-color: rgba(128, 0, 255, 0.3);
+}
+.perk-green {
+  border-color: rgba(0, 180, 80, 0.3);
+}
+.perk-orange {
+  border-color: rgba(255, 140, 0, 0.3);
+}
+.perk-cyan {
+  border-color: rgba(0, 200, 200, 0.3);
+}
+
+/* ---------- OPEN POSITIONS ---------- */
+.open-positions {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  display: inline-block;
+  background: rgba(255, 20, 147, 0.08);
+  color: var(--pink);
+  padding: 8px 22px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.section-header h2 {
+  color: var(--navy);
+  font-size: 2.6rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.section-header p {
+  color: #666;
+  max-width: 650px;
+  margin: auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* ---------- JOBS GRID ---------- */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.job-card {
+  background: #fff;
+  border: 1.5px solid rgba(10, 46, 122, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 35px;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.job-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--pink);
+  box-shadow: 0 15px 40px rgba(10, 46, 122, 0.08);
+}
+
+.job-card h3 {
+  color: var(--navy);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.job-title {
+  color: #555;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.job-title strong {
+  color: var(--pink);
+}
+
+.job-meta {
+  color: #888;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.job-type {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 30px;
+  background: rgba(10, 46, 122, 0.08);
+  color: var(--navy);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+  align-self: flex-start;
+}
+
+.job-description {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.apply-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pink);
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: var(--transition);
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+}
+
+.apply-btn:hover {
+  background: var(--navy);
+  color: #fff;
+  transform: translateX(5px);
+}
+
+/* ---------- CTA SECTION ---------- */
+.cta {
+  background: var(--navy);
+  text-align: center;
+  color: #fff;
+  padding: 80px 0;
+}
+
+.cta h2 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.cta p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta .career-btn {
+  background: var(--pink);
+}
+
+.cta .career-btn:hover {
+  background: #fff;
+  color: var(--navy);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+/* Tablets & small laptops */
+@media (max-width: 992px) {
+  .value-grid,
+  .benefits-grid,
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .perk-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .jobs-grid {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Mobile landscape & small tablets */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 35px;
+  }
+
+  .hero {
+    min-height: 80vh;
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .job-card {
+    padding: 25px;
+  }
+
+  .job-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .perk {
+    width: 160px;
+    height: 160px;
+    font-size: 0.9rem;
+    padding: 20px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 576px) {
+  .value-grid,
+  .benefits-grid,
+  .testimonial-grid,
+  .perk-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .jobs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .career-btn {
+    padding: 14px 30px;
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .perk {
+    width: 140px;
+    height: 140px;
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+
+  .card,
+  .benefit,
+  .testimonial {
+    padding: 24px;
+  }
+
+  .job-card {
+    padding: 20px;
+  }
+
+  .benefit span {
+    font-size: 2.2rem;
+  }
+
+  .cta {
+    padding: 60px 20px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .perk {
+    width: 120px;
+    height: 120px;
+    font-size: 0.7rem;
+    padding: 12px;
+  }
+
+  .apply-btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+/* Card Icon Styles */
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 150px;
+  margin: 20px 0px 0px 50px;
+/*  background: rgba(255, 20, 147, 0.08);*/
+/*  border-radius: 50%;*/
+  font-size: 2.2rem;
+  transition: var(--transition);
+}
+
+/*.card:hover .card-icon {
+  background: var(--pink);
+  transform: scale(1.05) rotate(-5deg);
+}
+
+.card:hover .card-icon svg,
+.card:hover .card-icon img {
+  filter: brightness(0) invert(1);
+}*/
+
+/* For SVG icons */
+.icon-svg {
+  width: 200px;
+  height: 150px;
+/*  color: var(--pink);*/
+  transition: var(--transition);
+}
+
+/*.card:hover .icon-svg {
+  color: #fff;
+}*/
+
+/* For emoji icons */
+.card-icon .emoji {
+  line-height: 1;
+  font-size: 2.4rem;
+}
+
+/* For Next.js Image component */
+.card-icon img {
+  width: 200px;
+  height: 150px;
+  object-fit: contain;
+}

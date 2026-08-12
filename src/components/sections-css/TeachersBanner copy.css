@@ -1,0 +1,107 @@
+/*-------------Teacher-Banner---------*/
+
+/* Section */
+.cta-section-section {
+  padding: 80px 0;
+  background: #0a2e7a;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional Background Decoration */
+.cta-section-section::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  top: -150px;
+  left: -100px;
+}
+
+.cta-section-section::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 20, 147, 0.08);
+  border-radius: 50%;
+  bottom: -120px;
+  right: -80px;
+}
+
+/* Container */
+.cta-section-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Title */
+.cta-section-title {
+  font-size: 56px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+/* Description */
+.cta-section-description {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Button */
+.cta-section-button {
+  background: #ff1493;
+  color: #ffffff;
+  border: none;
+  padding: 18px 38px;
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-section-button:hover {
+  background: #ffffff;
+  color: #0a2e7a;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .cta-section-title {
+    font-size: 44px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cta-section-section {
+    padding: 70px 0;
+  }
+
+  .cta-section-title {
+    font-size: 34px;
+  }
+
+  .cta-section-description {
+    font-size: 16px;
+  }
+
+  .cta-section-button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
