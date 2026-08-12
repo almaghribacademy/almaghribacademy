@@ -390,7 +390,7 @@ async function sendEmails(data: any) {
       <body>
         <div class="container">
           <div class="logo-container">
-            <img src="https://almaghrib.academy/assets/images/only-logo.png" alt="AlMaghrib Academy" class="logo" />
+            <img src="https://res.cloudinary.com/v7hvcda2/image/upload/v1786559662/only-logo_uvauan.png" alt="AlMaghrib Academy" class="logo" />
           </div>
 
           <div class="header">
@@ -602,7 +602,7 @@ async function sendEmails(data: any) {
       <body>
         <div class="container">
           <div class="logo-container">
-            <img src="https://almaghrib.academy/assets/images/only-logo.png" alt="AlMaghrib Academy" class="logo" />
+            <img src="https://res.cloudinary.com/v7hvcda2/image/upload/v1786559662/only-logo_uvauan.png" alt="AlMaghrib Academy" class="logo" />
           </div>
 
           <div class="header">

@@ -240,7 +240,7 @@ async function sendConfirmationEmail(data: any) {
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px;">
         <div style="text-align: center; margin-bottom: 20px;">
-          <img src="https://www.almaghrib.academy/assets/images/only-logo.png" alt="AlMaghrib Academy" style="max-width: 80px;" />
+          <img src="https://res.cloudinary.com/v7hvcda2/image/upload/v1786559662/only-logo_uvauan.png" alt="AlMaghrib Academy" style="max-width: 80px;" />
         </div>
         <h2 style="color: #0a2e7a; text-align: center;">Registration Confirmation</h2>
         <p>Dear ${firstName} ${lastName},</p>
