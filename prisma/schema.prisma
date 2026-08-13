@@ -39,12 +39,14 @@ model StudentTrial {
 // TEACHER APPLICATIONS
 // ============================================
 
+// schema.prisma - Updated TeacherApplication model
+
 model TeacherApplication {
   id              Int       @id @default(autoincrement())
   firstName       String    @map("first_name") @db.VarChar(50)
   lastName        String    @map("last_name") @db.VarChar(50)
   gender          String    @db.VarChar(20)
-  email           String    @unique @db.VarChar(100)
+  email           String    @db.VarChar(100)  // ← REMOVED @unique
   countryCode     String?   @map("country_code") @db.VarChar(10)
   mobile          String    @db.VarChar(20)
   country         String    @db.VarChar(50)
@@ -76,6 +78,9 @@ model TeacherApplication {
   // Relations
   reviewer        AdminUser? @relation("TeacherReviewer", fields: [reviewedBy], references: [id])
 
+  @@index([email])  // ← ADD THIS for better query performance
+  @@index([status])
+  @@index([createdAt])
   @@map("teacher_applications")
 }
 

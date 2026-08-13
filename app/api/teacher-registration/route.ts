@@ -225,21 +225,28 @@ export async function POST(request: NextRequest) {
     // Validate required fields
     const validatedData = teacherApplicationSchema.parse(rawData);
 
-    // Check for duplicate application
-    const existingApplication = await prisma.teacherApplication.findFirst({
+    // ============================================
+    // REMOVED: Duplicate email check
+    // Now allowing multiple applications from same email
+    // ============================================
+    
+    // We'll still check for excessive submissions (spam protection)
+    const recentApplications = await prisma.teacherApplication.count({
       where: {
         email: validatedData.email.toLowerCase().trim(),
+        ipAddress: ip,
         createdAt: {
-          gte: new Date(Date.now() - 24 * 60 * 60 * 1000),
+          gte: new Date(Date.now() - 24 * 60 * 60 * 1000), // Last 24 hours
         },
       },
     });
 
-    if (existingApplication) {
+    // Allow up to 3 applications per IP per day
+    if (recentApplications >= 3) {
       return NextResponse.json(
         {
           success: false,
-          message: 'You have already submitted an application within the last 24 hours.',
+          message: 'Too many applications from this IP address. Please try again later.',
         },
         { status: 429 }
       );
@@ -382,7 +389,7 @@ export async function POST(request: NextRequest) {
         firstName: validatedData.firstName.trim(),
         lastName: validatedData.lastName.trim(),
         gender: validatedData.gender,
-        email: validatedData.email.toLowerCase().trim(),
+        email: validatedData.email.toLowerCase().trim(), // No unique constraint anymore
         countryCode: validatedData.countryCode,
         mobile: validatedData.mobile.trim(),
         country: validatedData.country,
@@ -487,7 +494,7 @@ export async function POST(request: NextRequest) {
 }
 
 // ============================================
-// 8. EMAIL SENDING FUNCTION (Updated with Cloudinary links)
+// 8. EMAIL SENDING FUNCTION
 // ============================================
 async function sendEmails(data: {
   firstName: string;
@@ -549,7 +556,7 @@ async function sendEmails(data: {
       .replace(/'/g, '&#039;');
   };
 
-  // Applicant Email (same as before with Cloudinary info)
+  // Applicant Email
   const applicantEmailHtml = `
     <!DOCTYPE html>
     <html>
@@ -618,7 +625,7 @@ async function sendEmails(data: {
     </html>
   `;
 
-  // Admin Email HTML (with Cloudinary links)
+  // Admin Email
   const adminEmailHtml = `
     <!DOCTYPE html>
     <html>
@@ -732,7 +739,6 @@ async function sendEmails(data: {
           <p>This is an automated notification from your website.</p>
         </div>
       </div>
-    </body>
     </html>
   `;
 
