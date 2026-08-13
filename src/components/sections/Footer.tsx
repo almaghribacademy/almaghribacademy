@@ -137,7 +137,7 @@ export default function Footer() {
                 <h4 className="footer-heading">Follow Us</h4>
                 <div className="social-icons">
                   <Link
-                    href="https://www.facebook.com/people/LearnwithAlMaghribacademy/61592019329310/"
+                    href="https://www.facebook.com/"
                     target="_blank"
                     aria-label="Facebook"
                   >
@@ -145,7 +145,7 @@ export default function Footer() {
                   </Link>
 
                   <Link
-                    href="https://www.instagram.com/learnwithAlMaghribacademy/"
+                    href="https://www.instagram.com/"
                     target="_blank"
                     aria-label="Instagram"
                   >
@@ -153,7 +153,7 @@ export default function Footer() {
                   </Link>
 
                   <Link
-                    href="https://www.youtube.com/channel/UC9Q8M4_u1gYayoE_JYj6Y9A"
+                    href="https://www.youtube.com/"
                     target="_blank"
                     aria-label="YouTube"
                   >
@@ -168,7 +168,7 @@ export default function Footer() {
                     <FaWhatsapp />
                   </Link>
 
-                  <Link href="https://linkedin.com/company/your-company" target="_blank">
+                  <Link href="https://linkedin.com/" target="_blank">
                     <FaLinkedinIn />
                   </Link>
                 </div>
