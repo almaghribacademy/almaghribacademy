@@ -42,7 +42,7 @@ export default function Hero() {
             <div className="hero-buttons">
 
             <Link
-              href="/trial-form"
+              href="/register"
               className={`hero-btn-primary`}
             >
               Book Free Trial

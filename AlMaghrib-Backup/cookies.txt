@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+zemtura.webflow.io	TRUE	/	FALSE	1999999999	_cfuvid	uL3sZ.OTTmCDBH7QuXkBVnP_wbEm4CCtmvOxe5AifAE-1786628451.1036236-1.0.1.1-C5_2TCJzoeWZmWc2THtv.k3NtJbbvYELRPKqjAZ.f.U
+webflow.io	TRUE	/	FALSE	1999999999	SameSite	None
+

@@ -194,7 +194,7 @@ export default function AboutPage() {
               Book Free Trial
             </button>*/}
 
-            <Link href="/trial-form">
+            <Link href="/register">
               <button className="about-btn">
                 Book Free Trial
               </button>

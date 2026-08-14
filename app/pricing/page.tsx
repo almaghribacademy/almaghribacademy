@@ -62,7 +62,7 @@ export default function PricingPage() {
                   <li>✓ Top 5 Star Rated Teacher</li>
                   <li>✓ Video Recordings</li>
                 </ul>
-                <Link href="/trial-form" className="plan-button">
+                <Link href="/register" className="plan-button">
                   Book Free Trial
                 </Link>
               </div>
@@ -90,7 +90,7 @@ export default function PricingPage() {
                   <li>✓ Top 5 Star Rated Teacher</li>
                   <li>✓ Video Recordings</li>
                 </ul>
-                <Link href="/trial-form" className="plan-button">
+                <Link href="/register" className="plan-button">
                   Book Free Trial
                 </Link>
               </div>
@@ -117,7 +117,7 @@ export default function PricingPage() {
                   <li>✓ Top 5 Star Rated Teacher</li>
                   <li>✓ Video Recordings</li>
                 </ul>
-                <Link href="/trial-form" className="plan-button">
+                <Link href="/register" className="plan-button">
                   Book Free Trial
                 </Link>
               </div>
@@ -144,7 +144,7 @@ export default function PricingPage() {
                   <li>✓ Top 5 Star Rated Teacher</li>
                   <li>✓ Video Recordings</li>
                 </ul>
-                <Link href="/trial-form" className="plan-button">
+                <Link href="/register" className="plan-button">
                   Book Free Trial
                 </Link>
               </div>

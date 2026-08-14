@@ -82,7 +82,7 @@ export default async function CourseDetailPage({ params }: CourseDetailPageProps
             <span className="course-badge">{course.badge}</span>
             <h1 className="course-detail-title">{course.title}</h1>
             <p className="course-details-description">{course.fullDescription}</p>
-            <Link href="/trial-form">
+            <Link href="/register">
               <button className="course-btn">Book Free Trial</button>
             </Link>
           </div>

@@ -25,7 +25,7 @@ export default function TeachersPage() {
               Learn from qualified, experienced and dedicated Quran,
               Arabic and Islamic Studies teachers.
             </p>
-            <Link href="/trial-form">
+            <Link href="/register">
               <button className="teacher-cta-button">Book Free Trial</button>
             </Link>
           </div>

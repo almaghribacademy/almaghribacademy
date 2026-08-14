@@ -259,7 +259,7 @@ export default function ContactPage() {
               Have questions about our Quran, Arabic, or Islamic Studies
               programs? Our team is here to help.
             </p>
-            <Link href="/trial-form">
+            <Link href="/register">
               <button className="contact-cta-button">Book Free Trial</button>
             </Link>
           </div>

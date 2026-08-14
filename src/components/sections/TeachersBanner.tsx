@@ -24,7 +24,7 @@ export default function TeachersBanner() {
           Book Your Free Quran Trial Class
         </button>*/}
         <Link
-              href="/trial-form"
+              href="/register"
               className={`footer-button`}>
               Book Your Free Quran Trial Class
             </Link>

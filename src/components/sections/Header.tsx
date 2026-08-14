@@ -208,7 +208,7 @@ export default function Header() {
 
           {/* Book Free Trial Button */}
           <Link 
-            href="/trial-form" 
+            href="/register" 
             className="header-cta-pill"
             onClick={() => setIsMobileMenuOpen(false)}
           >

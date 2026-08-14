@@ -1,0 +1,5 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+19:08:45	20/20	---MCZ	200	added ('OK')	text/plain	date:Thu,%2013%20Aug%202026%2013:38:45%20GMT	https://zemtura.webflow.io/robots.txt		(from )
+19:08:46	6446/6446	---M--	502	error ('Bad%20Gateway')	text/html	date:Thu,%2013%20Aug%202026%2013:38:45%20GMT	https://zemtura.webflow.io/	./AlMaghrib-Backup/zemtura.webflow.io/index.html	(from )
+19:08:47	6446/6446	---M--	502	error ('Bad%20Gateway')	text/html	date:Thu,%2013%20Aug%202026%2013:38:46%20GMT	https://zemtura.webflow.io/	./AlMaghrib-Backup/zemtura.webflow.io/index.html	(from )
+19:08:48	6446/6446	---M--	502	error ('Bad%20Gateway')	text/html	date:Thu,%2013%20Aug%202026%2013:38:47%20GMT	https://zemtura.webflow.io/	./AlMaghrib-Backup/zemtura.webflow.io/index.html	(from )

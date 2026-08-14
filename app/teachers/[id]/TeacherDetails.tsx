@@ -103,7 +103,7 @@ export default function TeacherProfilePage() {
                 <div className="profile-actions">
                   <button 
                     className="btn-primary"
-                    onClick={() => router.push('/trial-form')}
+                    onClick={() => router.push('/register')}
                   >
                     Book Trial Class
                   </button>
@@ -200,7 +200,7 @@ export default function TeacherProfilePage() {
                           <span>Rating</span>
                           <strong>⭐ {teacher.rating}</strong>
                         </div>
-                        <button className="btn-primary full-width" onClick={() => router.push('/trial-form')}>
+                        <button className="btn-primary full-width" onClick={() => router.push('/register')}>
                           Book Trial
                         </button>
                       </div>
@@ -245,7 +245,7 @@ export default function TeacherProfilePage() {
                     <p className="availability-note">
                       * Specific times can be arranged based on student preference
                     </p>
-                    <button className="btn-primary" onClick={() => router.push('/trial-form')}>
+                    <button className="btn-primary" onClick={() => router.push('/register')}>
                       Book a Time Slot
                     </button>
                   </div>

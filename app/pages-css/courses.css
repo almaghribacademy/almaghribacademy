@@ -205,7 +205,7 @@
   padding: 12px 24px;
   border-radius: 999px;
   background: #c3c9cf;
-  color: #ffffff;
+  color: #151313;
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
@@ -218,6 +218,7 @@
   background: #0a2e7a;
   transform: translateX(6px);
   box-shadow: 0 8px 25px rgba(10, 46, 122, 0.2);
+  color: #ffffff;
 }
 
 .course-button:active {

@@ -25,7 +25,7 @@ export default function CTA() {
             Book Your Free Quran Trial
           </button>*/}
 
-          <Link href="/trial-form" className="btn-primary">
+          <Link href="/register" className="btn-primary">
             <span>Book Your Free Quran Trial</span>
           </Link>
 

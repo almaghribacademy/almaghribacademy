@@ -237,7 +237,7 @@ const benefits = [
 
                 <p className="job-description">{job.description}</p>
 
-                <a href="/teacher-registration-form" className="apply-btn">
+                <a href="/teacher-application" className="apply-btn">
                   Apply Now →
                 </a>
               </div>
