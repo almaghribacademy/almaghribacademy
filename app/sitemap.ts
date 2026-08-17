@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://AlMaghribacademy.co";
+  const baseUrl = "https://almaghrib.academy";
 
   return [
     {
@@ -161,13 +161,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/trial-form`,
+      url: `${baseUrl}/register`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/teacher-registration-form`,
+      url: `${baseUrl}/teacher-application`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

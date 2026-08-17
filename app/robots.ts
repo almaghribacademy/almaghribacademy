@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://AlMaghribacademy.co/sitemap.xml",
-    host: "https://AlMaghribacademy.co",
+    sitemap: "https://almaghrib.academy/sitemap.xml",
+    host: "https://almaghrib.academy",
   };
 }
